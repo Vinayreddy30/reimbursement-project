@@ -1,0 +1,7 @@
+package com.example.reimbursement.repository;
+
+import com.example.reimbursement.entity.Password;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PasswordRepository extends JpaRepository<Password, String> {
+}

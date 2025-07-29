@@ -1,0 +1,41 @@
+package com.example.reimbursement.entity;
+
+import lombok.Data;
+
+import jakarta.persistence.*;
+
+import java.time.LocalDate;
+
+@Data
+@Entity
+@Table(name = "TPSM_BMN")
+public class Department {
+
+    @Id
+    @Column(name = "SHZK_BMN_CD", length = 20)
+    private String departmentCode;
+
+    @Column(name = "SHZK_BMN_NM", length = 100)
+    private String departmentName;
+
+    @Column(name = "PARENT_BMN_CD", length = 20)
+    private String parentDepartmentCode; // if hierarchy is present
+
+    @Column(name = "ACCNT_DPT_CD", length = 10)
+    private String accountingDepartmentCode;
+
+    @Column(name = "CRT_EMP_NO", length = 20)
+    private String createdBy;
+
+    @Column(name = "CRT_DT")
+    private LocalDate createdDate;
+
+    @Column(name = "UPD_EMP_NO", length = 20)
+    private String updatedBy;
+
+    @Column(name = "UPD_DT")
+    private LocalDate updatedDate;
+
+    @Column(name = "DEL_FLG", length = 1)
+    private String deleteFlag;
+}
